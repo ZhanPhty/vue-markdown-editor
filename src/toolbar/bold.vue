@@ -1,0 +1,30 @@
+<template>
+  <div class="vmd-toolbar-item" @click="bindClick">
+    <toolbar-icon :icons="iconItem" />
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import ToolbarIcon from '../components/ToolbarIcon.vue'
+import { toolbarItem } from '../mixins/toolbar'
+
+@Component({
+  components: { ToolbarIcon },
+  mixins: [toolbarItem]
+})
+export default class Bold extends Vue {
+  iconItem = {
+    name: 'bold',
+    title: '粗体',
+    prefix: '**',
+    subfix: '**',
+    keyCode: 'B',
+    isCtrl: true,
+    isShift: false,
+    isAlt: false,
+    icon:
+      '<svg aria-hidden="true" focusable="false" data-icon="bold" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-bold fa-w-12 fa-3x"><path fill="currentColor" d="M314.52 238.78A119.76 119.76 0 0 0 232 32H48a16 16 0 0 0-16 16v16a16 16 0 0 0 16 16h16v352H48a16 16 0 0 0-16 16v16a16 16 0 0 0 16 16h208a128 128 0 0 0 128-128c0-49.49-28.38-91.92-69.48-113.22zM128 80h88a72 72 0 0 1 0 144h-88zm112 352H128V272h112a80 80 0 0 1 0 160z"></path></svg>'
+  }
+}
+</script>
